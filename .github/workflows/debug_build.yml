@@ -1,4 +1,4 @@
-name: Release Build
+nameplate: Release Build
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease
       - name: Rename the APK file
-        run: mv ./app/build/outputs/apk_from_bundle/release/*.apk ./${{ env.APP_NAME }}.apk
+        run: mv ./app/build/outputs/apk_from_bundle/*/*.apk ./AppManager.apk
       - name: Store generated APK file
         uses: actions/upload-artifact@v4
         with:
